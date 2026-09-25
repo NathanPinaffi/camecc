@@ -4,10 +4,10 @@ declare(strict_types=1);
 /**
  * Gera a versão estática do site em public/ (index.html + assets),
  * para hospedar em serviços sem PHP, como a Vercel.
- * Uso: php build.php   (rode de novo sempre que editar o site)
+ * Uso: php scripts/build.php   (rode de novo sempre que editar o site)
  */
 
-$root = __DIR__;
+$root = dirname(__DIR__);
 $out = $root . '/public';
 
 function rrmdir(string $dir): void
