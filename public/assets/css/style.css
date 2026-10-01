@@ -286,16 +286,19 @@ html:not(.js) .preloader { display: none; }
 .hero__copy { display: grid; justify-items: start; gap: 0; container-type: inline-size; min-width: 0; }
 .hero__title { --stroke: clamp(5px, .9vw, 12px); font-size: clamp(3.6rem, 22vw, 6.4rem); font-size: min(20cqw, 10.4rem); line-height: .9; margin: .18em 0 .14em; padding-right: .1em; white-space: nowrap; }
 .hero__sub { max-width: 30em; font-size: clamp(1.1rem, 1.9vw, 1.35rem); font-weight: 500; line-height: 1.45; }
-.hero__sub strong {
-    background-image: linear-gradient(transparent 62%, rgba(225, 29, 29, .35) 62%);
-    background-repeat: no-repeat; background-position: left center; background-size: 0% 100%;
-    font-weight: 700; animation: heroHighlight 3.6s ease-in-out infinite;
+.hero__sub strong { position: relative; display: inline-block; font-weight: 700; }
+.hero__sub strong::after {
+    content: ''; position: absolute; left: -.04em; right: -.04em; bottom: -.22em; height: .42em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M0 5 Q3 1 6 5 Q9 9 12 5' fill='none' stroke='%23e11d1d' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x; background-position: left center; background-size: 22px 11px;
+    clip-path: inset(0 100% 0 -6%);
+    animation: heroUnderline 3.6s ease-in-out infinite;
 }
-.hero__sub strong:nth-of-type(2) { animation-delay: .9s; }
-.hero__sub strong:nth-of-type(3) { animation-delay: 1.8s; }
-@keyframes heroHighlight {
-    0%, 100% { background-size: 0% 100%; }
-    40%, 65% { background-size: 100% 100%; }
+.hero__sub strong:nth-of-type(2)::after { animation-delay: .9s; }
+.hero__sub strong:nth-of-type(3)::after { animation-delay: 1.8s; }
+@keyframes heroUnderline {
+    0%, 100% { clip-path: inset(0 100% 0 -6%); }
+    40%, 65% { clip-path: inset(0 0% 0 -6%); }
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 
@@ -526,5 +529,5 @@ html:not(.js) .preloader { display: none; }
     *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
     .ticker__track, .footer__dog { animation: none !important; }
     .footer__dog { display: none; }
-    .hero__sub strong { animation: none !important; background-size: 100% 100% !important; }
+    .hero__sub strong::after { animation: none !important; clip-path: inset(0 0% 0 -6%) !important; }
 }
