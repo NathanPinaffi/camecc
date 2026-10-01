@@ -367,17 +367,17 @@ html:not(.js) .preloader { display: none; }
 .mspot--b { width: min(22vw, 260px); left: -6vw; top: 40%; animation-delay: -4s; }
 .mspot--c { width: min(30vw, 360px); right: 6%; bottom: -14%; animation-delay: -7s; }
 
-.members__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px); }
+.members__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(17px, 2.4vw, 34px) clamp(12px, 1.8vw, 26px); max-width: 780px; margin-inline: auto; }
 .member { rotate: var(--r, 0deg); transition: rotate .5s var(--ease-back), opacity .8s var(--ease) var(--d, 0s), translate .9s var(--ease) var(--d, 0s); }
 .member:hover, .member:focus-within { rotate: 0deg; }
-.member__card { position: relative; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: var(--radius); padding: 14px 14px 22px; box-shadow: 8px 8px 0 var(--ink); transition: transform .3s var(--ease), box-shadow .3s var(--ease); transform-style: preserve-3d; will-change: transform; }
-.member:hover .member__card { box-shadow: 12px 12px 0 var(--ink); }
-.member__photo { aspect-ratio: 1 / 1.05; overflow: hidden; border: 3px solid var(--ink); border-radius: calc(var(--radius) - 8px); background: var(--paper-2); }
+.member__card { position: relative; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: calc(var(--radius) * .6); padding: 8px 8px 13px; box-shadow: 5px 5px 0 var(--ink); transition: transform .3s var(--ease), box-shadow .3s var(--ease); transform-style: preserve-3d; will-change: transform; }
+.member:hover .member__card { box-shadow: 7px 7px 0 var(--ink); }
+.member__photo { aspect-ratio: 1 / 1.05; overflow: hidden; border: 2px solid var(--ink); border-radius: calc(var(--radius) * .6 - 5px); background: var(--paper-2); }
 .member__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; transition: transform .8s var(--ease); }
 .member:hover .member__photo img { transform: scale(1.08); }
-.member__name { position: relative; z-index: 2; display: inline-block; margin: -30px 0 0 10px; padding: .1em .55em .05em; background: var(--red); border: 3px solid var(--ink); border-radius: 14px; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.15; text-transform: uppercase; color: var(--paper); -webkit-text-stroke: 4px var(--ink); paint-order: stroke fill; text-shadow: 2px 3px 0 var(--ink); box-shadow: 3px 3px 0 var(--ink); rotate: -3deg; transition: rotate .4s var(--ease-back); translate: 0 0; transform: translateZ(30px); }
+.member__name { position: relative; z-index: 2; display: inline-block; margin: -18px 0 0 6px; padding: .1em .55em .05em; background: var(--red); border: 2px solid var(--ink); border-radius: 8px; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.02rem, 1.8vw, 1.32rem); line-height: 1.15; text-transform: uppercase; color: var(--paper); -webkit-text-stroke: 2.4px var(--ink); paint-order: stroke fill; text-shadow: 1.2px 1.8px 0 var(--ink); box-shadow: 1.8px 1.8px 0 var(--ink); rotate: -3deg; transition: rotate .4s var(--ease-back); translate: 0 0; transform: translateZ(30px); }
 .member:hover .member__name { rotate: 2deg; }
-.member__role { margin: .9rem 10px 0; font-weight: 700; font-size: .95rem; text-transform: uppercase; letter-spacing: .08em; color: var(--red); }
+.member__role { margin: .54rem 6px 0; font-weight: 700; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--red); }
 
 /* ---------- Campeonatos ---------- */
 
@@ -501,7 +501,7 @@ html:not(.js) .preloader { display: none; }
 
 @media (max-width: 560px) {
     body { font-size: 1rem; }
-    .members__grid { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; gap: 40px; }
+    .members__grid { grid-template-columns: repeat(2, 1fr); max-width: 420px; gap: 20px 14px; }
     .campus__frame { aspect-ratio: 4 / 3; box-shadow: 6px 6px 0 var(--ink); }
     .campus figcaption { margin-top: 3.6rem; }
     .campus__runner { width: 100px; }
