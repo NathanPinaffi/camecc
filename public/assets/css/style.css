@@ -292,13 +292,23 @@ html:not(.js) .preloader { display: none; }
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M0 5 Q3 1 6 5 Q9 9 12 5' fill='none' stroke='%23e11d1d' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: repeat-x; background-position: left center; background-size: 22px 11px;
     clip-path: inset(0 100% 0 -6%);
-    animation: heroUnderline 3.6s ease-in-out infinite;
+    animation-duration: 10.8s; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
 }
-.hero__sub strong:nth-of-type(2)::after { animation-delay: .9s; }
-.hero__sub strong:nth-of-type(3)::after { animation-delay: 1.8s; }
-@keyframes heroUnderline {
-    0%, 100% { clip-path: inset(0 100% 0 -6%); }
-    40%, 65% { clip-path: inset(0 0% 0 -6%); }
+/* As três palavras dividem uma única volta contínua: desenham uma de cada vez, em sequência, sem sobrepor. */
+.hero__sub strong:nth-of-type(1)::after { animation-name: heroUnderline1; }
+.hero__sub strong:nth-of-type(2)::after { animation-name: heroUnderline2; }
+.hero__sub strong:nth-of-type(3)::after { animation-name: heroUnderline3; }
+@keyframes heroUnderline1 {
+    0%, 33.33%, 100% { clip-path: inset(0 100% 0 -6%); }
+    13.33%, 21.67%    { clip-path: inset(0 0% 0 -6%); }
+}
+@keyframes heroUnderline2 {
+    0%, 33.33%, 66.67%, 100% { clip-path: inset(0 100% 0 -6%); }
+    46.67%, 55%              { clip-path: inset(0 0% 0 -6%); }
+}
+@keyframes heroUnderline3 {
+    0%, 66.67%, 100% { clip-path: inset(0 100% 0 -6%); }
+    80%, 88.33%       { clip-path: inset(0 0% 0 -6%); }
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 
