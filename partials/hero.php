@@ -1,5 +1,4 @@
 <section id="inicio" class="hero" data-hero>
-    <?= formulas(5, 4) ?>
     <div class="hero__bg" aria-hidden="true">
         <?= blob('hero__blob hero__blob--red', 11, .26, '18s') ?>
         <?= blob('hero__blob hero__blob--ink', 23, .3, '23s') ?>

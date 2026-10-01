@@ -68,38 +68,6 @@ function blob(string $class, int $seed, float $var = .24, string $dur = '16s'): 
         . '</path></svg>';
 }
 
-/** Fórmulas "escritas a giz" espalhadas no fundo da seção (decorativas, deterministas pela seed). */
-function formulas(int $seed, int $count = 4): string
-{
-    static $pool = [
-        'E = mc²', '∫ f(x) dx', 'Σ n²', 'lim x→∞', 'π r²', '√(a² + b²)',
-        'sen²θ + cos²θ = 1', 'd/dx', '∇ · F', 'P(A|B)', 'x = (-b ± √Δ) / 2a',
-        'n!', 'O(n log n)', 'P(A ∩ B)', '∂f/∂x', 'Σ pᵢ = 1', 'μ ± σ', 'det(A)',
-        '∀x ∈ ℝ', 'a² + b² = c²', 'f(x) = ax + b', 'χ²', 'λ = 1/μ', 'A ∪ B',
-        'cos(θ)', '2ⁿ', 'if (n == 0)', 'while (true)', 'σ²', 'log₂(n)',
-    ];
-
-    mt_srand($seed);
-    $idx = range(0, count($pool) - 1);
-    for ($i = count($idx) - 1; $i > 0; $i--) {
-        $j = mt_rand(0, $i);
-        [$idx[$i], $idx[$j]] = [$idx[$j], $idx[$i]];
-    }
-
-    $out = '<div class="formulas" aria-hidden="true">';
-    foreach (array_slice($idx, 0, $count) as $k) {
-        $x = mt_rand(3, 84);
-        $y = mt_rand(6, 86);
-        $r = mt_rand(-9, 9);
-        $fs = mt_rand(85, 155) / 100;
-        $dur = mt_rand(78, 128) / 10;
-        $delay = mt_rand(0, 42) / 10;
-        $out .= '<span class="formula" style="--x:' . $x . '%; --y:' . $y . '%; --r:' . $r . 'deg; --fs:' . $fs . '; --dur:' . $dur . 's; --delay:' . $delay . 's">'
-            . e($pool[$k]) . '</span>';
-    }
-    return $out . '</div>';
-}
-
 /** Divisória ondulada no topo da seção (preenche com a cor de fundo da própria seção). */
 function wave(string $class = '', bool $flip = false): string
 {

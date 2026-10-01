@@ -7,7 +7,7 @@
 return [
 
     'site' => [
-        'name'      => 'CAMECC',
+        'name'      => 'Camecc',
         'full_name' => 'Centro Acadêmico da Matemática, Estatística e Computação Científica',
         'tagline'   => 'A casa dos estudantes de Matemática, Estatística e Computação Científica.',
         'courses'   => ['Matemática', 'Estatística', 'Computação Científica'],
@@ -15,7 +15,7 @@ return [
 
     'nav' => [
         ['href' => '#inicio',      'label' => 'Início'],
-        ['href' => '#camecc',      'label' => 'O CAMECC'],
+        ['href' => '#camecc',      'label' => 'O Camecc'],
         ['href' => '#membros',     'label' => 'Membros'],
         ['href' => '#campeonatos', 'label' => 'Campeonatos'],
         ['href' => '#contato',     'label' => 'Contato'],

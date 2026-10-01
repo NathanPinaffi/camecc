@@ -55,7 +55,6 @@ if (!function_exists('tournament_icon')) {
 ?>
 <section id="campeonatos" class="tournaments section" style="--bg:var(--ink)">
     <?= wave() ?>
-    <?= formulas(47, 4) ?>
     <div class="tournaments__bg" aria-hidden="true">
         <?= blob('tblob tblob--a', 71, .26, '21s') ?>
         <?= blob('tblob tblob--b', 83, .28, '25s') ?>
