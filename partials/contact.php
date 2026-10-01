@@ -7,6 +7,7 @@ if (!empty($c['email']))     $links[] = ['href' => 'mailto:' . $c['email'], 'lab
 ?>
 <section id="contato" class="contact section" style="--bg:var(--paper)">
     <?= wave() ?>
+    <?= formulas(61, 4) ?>
     <div class="container">
         <div class="contact__panel" data-reveal="clip">
             <?= blob('contact__blob contact__blob--a', 101, .24, '19s') ?>

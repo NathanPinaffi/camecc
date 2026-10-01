@@ -1,5 +1,6 @@
 <section id="membros" class="members section" style="--bg:var(--red)">
     <?= wave() ?>
+    <?= formulas(31, 4) ?>
     <div class="members__spots" aria-hidden="true">
         <?= blob('mspot mspot--a', 17, .3, '14s') ?>
         <?= blob('mspot mspot--b', 29, .3, '17s') ?>

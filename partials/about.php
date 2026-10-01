@@ -12,6 +12,7 @@ $pillars = [
 ];
 ?>
 <section id="camecc" class="about section" style="--bg:var(--paper)">
+    <?= formulas(19, 4) ?>
     <div class="container">
         <div class="about__head">
             <?= blob('about__blob', 121, .25, '20s') ?>
